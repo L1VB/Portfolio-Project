@@ -1,11 +1,11 @@
 :root{
-    --white-c: #;
-    --light-grey-c: #;
-    --grey-c: #;
-    --light-orange-c: #;
-    --orange-c: #;
-    --medium-grey-c: #;
-    --dark-grey-c: #;
+    --white-c: #faf7f0;
+    --light-grey-c: #D8D2C2;
+    --grey-c: #A9A497;
+    --light-orange-c: #B17457;
+    --orange-c: #AD5B34;
+    --medium-grey-c: #4A4947;
+    --dark-grey-c: #302E28;
 }
 
 *, html, body{
@@ -16,4 +16,11 @@
 
 body{
     background-color: var(--white-c);
+    color: var(--dark-grey-c);
+}
+
+main .content img{
+    background-image: url('');
+    background-position: center;
+    background-size: cover;
 }
