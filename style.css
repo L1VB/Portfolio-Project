@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Junge&family=Koh+Santepheap:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&display=swap');
 
 :root{
     --white-c: #faf7f0;
@@ -9,8 +9,7 @@
     --medium-grey-c: #4A4947;
     --dark-grey-c: #302E28;
 
-    --title-font: 'Junge';
-    --body-font: '';
+    --font: 'Akshar';
 }
 
 *, html, body{
@@ -23,15 +22,33 @@
 body{
     background-color: var(--white-c);
     color: var(--dark-grey-c);
+    font-family: var(--font);
 }
 
 h1{
     font-size: clamp(3rem, 1rem + 10vw, 10rem);
-    font-family: var(--title-font);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+h2{
+    font-weight: 500;
+}
+
+h3{
+    font-weight: 400;
 }
 
 h4{
-    font-family: var(--title-font);
+    font-weight: 600;
+}
+
+h5{
+    font-weight: 400;
+}
+
+p{
+    font-weight: 400;
 }
 
 /* styles */
@@ -78,8 +95,4 @@ img{
     align-items: end;
 
     background-color: #A9A497;
-}
-
-.topic h4{
-    padding-bottom: .5rem;
 }
