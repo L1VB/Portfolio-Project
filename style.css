@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Junge&family=Koh+Santepheap:wght@100;300;400;700;900&display=swap');
+
 :root{
     --white-c: #faf7f0;
     --light-grey-c: #D8D2C2;
@@ -6,12 +8,16 @@
     --orange-c: #AD5B34;
     --medium-grey-c: #4A4947;
     --dark-grey-c: #302E28;
+
+    --title-font: 'Junge';
+    --body-font: '';
 }
 
 *, html, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 body{
@@ -19,8 +25,61 @@ body{
     color: var(--dark-grey-c);
 }
 
-main .content img{
-    background-image: url('');
-    background-position: center;
+h1{
+    font-size: clamp(3rem, 1rem + 10vw, 10rem);
+    font-family: var(--title-font);
+}
+
+h4{
+    font-family: var(--title-font);
+}
+
+/* styles */
+main .background-image {
+    background-image: url(images/DSC03790.JPG);
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    top: 0;
+    z-index: -10;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    width: 100vw;
+    height: 100vh;
+}
+
+.text{
+    grid-area: 8 / 2 / 10 / 10;
+    height: fit-content;
+    width: fit-content;
+
+    background-color: #AD5B34;
+}
+
+/* grid-row-start grid-column-start grid-row-end grid-column-endxs */
+
+.title .topic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+
+    background-color: #A9A497;
+}
+
+.topic h4{
+    padding-bottom: .5rem;
 }
