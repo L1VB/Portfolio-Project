@@ -16,7 +16,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 
 body{
@@ -27,9 +26,8 @@ body{
 
 /* text styles */
 h1{
-    font-size: 4.5rem;
+    font-size: clamp(3.5rem, 2.071rem + 7.143vw, 8.5rem);
     font-weight: 400;
-    text-transform: uppercase;
     margin: 0;
     padding: 0;
     line-height: 1;
@@ -41,33 +39,37 @@ h2{
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 1.464rem + 1.429vw, 2.75rem);
 }
 
 h3{
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.071rem + 2.143vw, 3rem);
 }
 
 h4{
     font-weight: 600;
     margin: 0;
     line-height: 1;
-    font-size: 1rem;
+    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
 }
 
 h5{
     font-weight: 500;
     margin: 0;
     line-height: 1;
-    font-size: .9rem;
+    font-size: clamp(0.9rem, 0.643rem + 1.286vw, 1.8rem);
 }
 
 p{
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: .9rem;
+    font-size: clamp(0.9rem, 0.643rem + 1.286vw, 1.8rem);
+}
+
+.text{
+    padding: 3rem 0;
 }
