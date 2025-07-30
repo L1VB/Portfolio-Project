@@ -60,14 +60,14 @@ h5{
     font-weight: 500;
     margin: 0;
     line-height: 1;
-    font-size: clamp(0.9rem, 0.643rem + 1.286vw, 1.8rem);
+    font-size: clamp(1rem, 0.786rem + 1.071vw, 1.75rem);
 }
 
 p{
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: clamp(0.9rem, 0.643rem + 1.286vw, 1.8rem);
+    font-size: clamp(1rem, 0.786rem + 1.071vw, 1.75rem);
 }
 
 .text{
