@@ -22,6 +22,7 @@ body{
     background-color: var(--white-c);
     color: var(--dark-grey-c);
     font-family: var(--font);
+    margin: 0 2%;
 }
 
 /* Button Styles - Required for functionality */
@@ -35,27 +36,33 @@ button {
     text-align: inherit;
 }
 
-/* Page Section Visibility - Core showSection() functionality */
+/* Page Section Visibility - CSS-only navigation using :target */
 .page-section {
     display: none;
 }
 
-.page-section.active {
+.page-section:target {
     display: block;
 }
 
-#home-content {
+/* Show home by default when no hash in URL */
+.page-section#home {
     display: block;
-    color: var(--orange-c);
 }
 
-#home-content.hidden {
-    display: none;
+/* Hide home when any other section is targeted */
+body:has(.page-section:not(#home):target) #home {
+    display: none !important;
+}
+
+/* Fallback for browsers that don't support :has() */
+.page-section:not(#home):target ~ #home {
+    display: none !important;
 }
 
 /* Text styles */
 h1{
-    font-size: clamp(3.5rem, 2.071rem + 7.143vw, 8.5rem);
+    font-size: 3.5rem;
     font-weight: 400;
     margin: 0;
     padding: 0;
@@ -68,38 +75,33 @@ h2{
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: clamp(1.75rem, 1.464rem + 1.429vw, 2.75rem);
+    font-size: 2.5;
 }
 
 h3{
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: clamp(1.5rem, 1.071rem + 2.143vw, 3rem);
+    font-size: 2;
 }
 
 h4{
     font-weight: 600;
     margin: 0;
     line-height: 1;
-    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
+    font-size: 1.5;
 }
 
 h5{
     font-weight: 500;
     margin: 0;
     line-height: 1;
-    font-size: clamp(1rem, 0.786rem + 1.071vw, 1.75rem);
+    font-size: 1;
 }
 
 p{
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: clamp(1rem, 0.786rem + 1.071vw, 1.75rem);
-}
-
-/* page styles */
-section#web-design{
-    color: var(--light-orange-c);
+    font-size: 1;
 }
