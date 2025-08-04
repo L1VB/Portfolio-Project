@@ -24,7 +24,36 @@ body{
     font-family: var(--font);
 }
 
-/* text styles */
+/* Button Styles - Required for functionality */
+button {
+    background: none;
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-align: inherit;
+}
+
+/* Page Section Visibility - Core showSection() functionality */
+.page-section {
+    display: none;
+}
+
+.page-section.active {
+    display: block;
+}
+
+#home-content {
+    display: block;
+    color: var(--orange-c);
+}
+
+#home-content.hidden {
+    display: none;
+}
+
+/* Text styles */
 h1{
     font-size: clamp(3.5rem, 2.071rem + 7.143vw, 8.5rem);
     font-weight: 400;
@@ -70,6 +99,7 @@ p{
     font-size: clamp(1rem, 0.786rem + 1.071vw, 1.75rem);
 }
 
-.text{
-    padding: 3rem 0;
+/* page styles */
+section#web-design{
+    color: var(--orange-c);
 }

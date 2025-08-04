@@ -12,17 +12,32 @@
         <div class="content">
             <ul>
                 <li>
-                    <a href="web-design.html"><h4>Web Design</h4></a>
+                    <button onclick="showSection('home')"><h4>Home</h4></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="client-work.html"><h4>Client Work</h4></a>
+                    <button onclick="showSection('web-design')"><h4>Web Design</h4></button>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <a href="page-index.html"><h4>Work Index</h4></a>
+                    <button onclick="showSection('photography')"><h4>Photography</h4></button>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <button onclick="showSection('university')"><h4>University Projects</h4></button>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <button onclick="showSection('personal')"><h4>Personal Projects</h4></button>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <button onclick="showSection('client')"><h4>Client Work</h4></button>
                 </li>
             </ul>
         </div>
@@ -30,86 +45,127 @@
 
     <hr>
 
-    <main>
-        <div class="content">
-            <h4>Design and Digital Media</h4>
-            <h1>Liv Broughton</h1>
-            <h2>University Student</h2>
-        </div>
-    </main>
+    <!-- Home Page Content -->
+    <div id="home-content">
+        <main>
+            <div class="content">
+                <h4>Design and Digital Media</h4>
+                <h1>Liv Broughton</h1>
+                <h2>University Student</h2>
+            </div>
+        </main>
 
-    <hr>
+        <hr>
 
-    <section class="projects">
+        <section class="projects">
+            <div class="content">
+                <button onclick="showSection('web-design')" class="card">
+                    <h3>Web Design: VS Code</h3>
+                    <img src="images/" alt="Screenshot">
+                    <h4>Subtitle</h4>
+                    <p>*Quick Description*</p>
+                </button>
+                <button onclick="showSection('photography')" class="card">
+                    <h3>Photography:</h3>
+                    <img src="images/" alt="Screenshot">
+                    <h4>Subtitle</h4>
+                    <p>*Quick Description*</p>
+                </button>
+                <button onclick="showSection('university')" class="card">
+                    <h3>University:</h3>
+                    <img src="images/" alt="Screenshot">
+                    <h4>Subtitle</h4>
+                    <p>*Quick Description*</p>
+                </button>
+                <button onclick="showSection('personal')" class="card">
+                    <h3>Personal:</h3>
+                    <img src="images/" alt="Screenshot">
+                    <h4>Subtitle</h4>
+                    <p>*Quick Description*</p>
+                </button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="contact">
+            <div class="content">
+                <div class="banner">
+                    <div class="b-card">
+                        <a href="" target="_blank"><h4>Instagram</h4></a>
+                    </div>
+                    <div class="b-card">
+                        <a href="https://www.behance.net/livbroughton" target="_blank"><h4>Behance</h4></a>
+                    </div>
+                    <div class="b-card">
+                        <a href="https://www.linkedin.com/in/liv-broughton" target="_blank"><h4>LinkedIn</h4></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="upcoming">
+            <div class="content">
+                <h3>Work Coming Soon:</h3>
+                <div class="u-card">
+                    <img src="images/" alt="project cover image">
+                    <h4>3D Motion: Blender</h4>
+                    <p>*Quick Description*</p>
+                </div>
+                <div class="u-card">
+                    <img src="images/" alt="project cover image">
+                    <h4>Studio II: Website</h4>
+                    <p>*Quick Description*</p>
+                </div>
+                <div class="u-card">
+                    <img src="images/" alt="project cover image">
+                    <h4>Website: Portfolio</h4>
+                    <p>*Quick Description*</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section Pages -->
+     <!-- Web Design -->
+    <section id="web-design" class="page-section">
         <div class="content">
-            <!-- carousel -->
-            <a href="" class="card">
-                <h3>Web Design: VS Code</h3>
-                <img src="images/" alt="Screenshot">
-                <h4>Subtitle</h4>
-                <p>*Quick Description*</p>
-            </a>
-            <a href="" class="card">
-                <h3>Photography:</h3>
-                <img src="images/" alt="Screenshot">
-                <h4>Subtitle</h4>
-                <p>*Quick Description*</p>
-            </a>
-            <a href="" class="card">
-                <h3>University:</h3>
-                <img src="images/" alt="Screenshot">
-                <h4>Subtitle</h4>
-                <p>*Quick Description*</p>
-            </a>
-            <a href="" class="card">
-                <h3>Personal:</h3>
-                <img src="images/" alt="Screenshot">
-                <h4>Subtitle</h4>
-                <p>*Quick Description*</p>
-            </a>
+            <h1>Web Design</h1>
+            <p>Web design content goes here...</p>
         </div>
     </section>
 
-    <hr>
-
-    <section class="contact">
+    <!-- Photography -->
+    <section id="photography" class="page-section">
         <div class="content">
-            <!-- banner -->
-            <div class="banner">
-                <div class="b-card">
-                    <a href=""><h4>Instagram</h4></a>
-                </div>
-                <div class="b-card">
-                    <a href="https://www.behance.net/livbroughton"><h4>Behance</h4></a>
-                </div>
-                <div class="b-card">
-                    <a href="https://www.linkedin.com/in/liv-broughton"><h4>LinkedIn</h4></a>
-                </div>
-            </div>
+            <h1>Photography</h1>
+            <p>Photography content goes here...</p>
         </div>
     </section>
 
-    <hr>
-
-    <section class="upcoming">
+    <!-- University -->
+    <section id="university" class="page-section">
         <div class="content">
-            <!-- upcoming work that i am doing -->
-            <h3>Work Coming Soon:</h3>
-            <div class="u-card">
-                <img src="images/" alt="project cover image">
-                <h4>3D Motion: Blender</h4>
-                <p>*Quick Description*</p>
-            </div>
-            <div class="u-card">
-                <img src="images/" alt="project cover image">
-                <h4>Studio II: Website</h4>
-                <p>*Quick Description*</p>
-            </div>
-            <div class="u-card">
-                <img src="images/" alt="project cover image">
-                <h4>Website: Portfolio</h4>
-                <p>*Quick Description*</p>
-            </div>
+            <h1>University Projects</h1>
+            <p>University projects content goes here...</p>
+        </div>
+    </section>
+
+    <!-- Personal Projects -->
+    <section id="personal" class="page-section">
+        <div class="content">
+            <h1>Personal Projects</h1>
+            <p>Personal projects content goes here...</p>
+        </div>
+    </section>
+
+    <!-- Client Work -->
+    <section id="client" class="page-section">
+        <div class="content">
+            <h1>Client Work</h1>
+            <p>Client work content goes here...</p>
         </div>
     </section>
 
@@ -117,7 +173,6 @@
 
     <footer>
         <div class="content">
-            <!-- contact info -->
             <div class="contact-me">
                 <h2>Contact Me!</h2>
                 <h3>*Phone Number*</h3>
@@ -126,25 +181,22 @@
             <div class="page-links">
                 <ul>
                     <li>
-                        <a href="index.html"><p>Home</p></a>
+                        <button onclick="showSection('home')"><p>Home</p></button>
                     </li>
                     <li>
-                        <a href="web-design.html"><p>Web Design</p></a>
+                        <button onclick="showSection('web-design')"><p>Web Design</p></button>
                     </li>
                     <li>
-                        <a href="photography.html"><p>Photography</p></a>
+                        <button onclick="showSection('photography')"><p>Photography</p></button>
                     </li>
                     <li>
-                        <a href="uni-project.html"><p>University Projects</p></a>
+                        <button onclick="showSection('university')"><p>University Projects</p></button>
                     </li>
                     <li>
-                        <a href="personal-projects.html"><p>Personal Projects</p></a>
+                        <button onclick="showSection('personal')"><p>Personal Projects</p></button>
                     </li>
                     <li>
-                        <a href="client-work.html"><p>Client Work</p></a>
-                    </li>
-                    <li>
-                        <a href="page-index.html"><p>Index</p></a>
+                        <button onclick="showSection('client')"><p>Client Work</p></button>
                     </li>
                 </ul>
             </div>
@@ -164,15 +216,6 @@
         </div>
     </footer>
 
-    <div class="text">
-        <hr>
-        <h1>Title</h1>
-        <h2>Menu-Title</h2>
-        <h3>(NO.)</h3>
-        <h4>Topic-Title</h4>
-        <h5>Subtitle</h5>
-        <p>Body Text</p>
-    </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
