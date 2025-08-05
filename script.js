@@ -1,42 +1,30 @@
-// CSS-only navigation using :target pseudo-selector
-// Enhanced for proper section switching
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Function to show only the targeted section
-    function updateSectionDisplay() {
-        const hash = window.location.hash;
-        const sections = document.querySelectorAll('.page-section');
-        
-        // Hide all sections first
-        sections.forEach(section => {
-            section.style.display = 'none';
-        });
-        
-        // Show the targeted section or home if no hash
-        if (hash && hash !== '#home') {
-            const targetSection = document.querySelector(hash);
-            if (targetSection && targetSection.classList.contains('page-section')) {
-                targetSection.style.display = 'block';
-            }
-        } else {
-            // Show home section when no hash or #home
-            document.querySelector('#home').style.display = 'block';
+function showSection(sectionName) {
+    // Hide all page sections
+    const sections = document.querySelectorAll('.page-section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Hide or show home content
+    const homeContent = document.getElementById('home-content');
+    
+    if (sectionName === 'home') {
+        // Show home content
+        homeContent.classList.remove('hidden');
+    } else {
+        // Hide home content and show selected section
+        homeContent.classList.add('hidden');
+        const targetSection = document.getElementById(sectionName);
+        if (targetSection) {
+            targetSection.classList.add('active');
         }
     }
     
-    // Update on page load
-    updateSectionDisplay();
-    
-    // Update when hash changes
-    window.addEventListener('hashchange', updateSectionDisplay);
-    
-    // Smooth scrolling to top when section changes
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 10);
-        });
-    });
+    // Scroll to top of page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Initialize page - show home by default
+document.addEventListener('DOMContentLoaded', function() {
+    showSection('home');
 });

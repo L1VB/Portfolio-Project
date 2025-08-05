@@ -11,33 +11,17 @@
     <nav>
         <div class="content">
             <ul>
-                <li>
-                    <a href="#home"><h4>Home</h4></a>
+                <li class="home-li">
+                    <button onclick="showSection('home')"><h4>Home</h4></button>
                 </li>
-            </ul>
-            <ul>
                 <li>
-                    <a href="#web-design"><h4>Web Design</h4></a>
+                    <button onclick="showSection('web-design')"><h4>Web Design</h4></button>
                 </li>
-            </ul>
-            <ul>
                 <li>
-                    <a href="#photography"><h4>Photography</h4></a>
+                    <button onclick="showSection('client')"><h4>Client Work</h4></button>
                 </li>
-            </ul>
-            <ul>
                 <li>
-                    <a href="#university"><h4>University Projects</h4></a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#personal"><h4>Personal Projects</h4></a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#client"><h4>Client Work</h4></a>
+                    <button onclick="showSection('index')"><h4>Index</h4></button>
                 </li>
             </ul>
         </div>
@@ -46,7 +30,7 @@
     <hr>
 
     <!-- Home Page Content -->
-    <section id="home" class="page-section">
+    <div id="home-content">
         <main>
             <div class="content">
                 <h4>Design and Digital Media</h4>
@@ -59,30 +43,30 @@
 
         <section class="projects">
             <div class="content">
-                <a href="#web-design" class="card">
+                <button onclick="showSection('web-design')" class="card">
                     <h3>Web Design: VS Code</h3>
                     <img src="images/" alt="Screenshot">
                     <h4>Subtitle</h4>
                     <p>*Quick Description*</p>
-                </a>
-                <a href="#photography" class="card">
+                </button>
+                <button onclick="showSection('photography')" class="card">
                     <h3>Photography:</h3>
                     <img src="images/" alt="Screenshot">
                     <h4>Subtitle</h4>
                     <p>*Quick Description*</p>
-                </a>
-                <a href="#university" class="card">
+                </button>
+                <button onclick="showSection('university')" class="card">
                     <h3>University:</h3>
                     <img src="images/" alt="Screenshot">
                     <h4>Subtitle</h4>
                     <p>*Quick Description*</p>
-                </a>
-                <a href="#personal" class="card">
+                </button>
+                <button onclick="showSection('personal')" class="card">
                     <h3>Personal:</h3>
                     <img src="images/" alt="Screenshot">
                     <h4>Subtitle</h4>
                     <p>*Quick Description*</p>
-                </a>
+                </button>
             </div>
         </section>
 
@@ -126,13 +110,14 @@
                 </div>
             </div>
         </section>
-    </section>
+    </div>
 
     <!-- Section Pages -->
     <section id="web-design" class="page-section">
         <div class="content">
             <h1>Web Design</h1>
             <p>Web design content goes here...</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus est animi quas voluptates, eligendi quo deleniti officia non? Quibusdam voluptatum facere delectus asperiores illo ipsum, fuga dolorum atque aliquam nisi?</p>
         </div>
     </section>
 
@@ -164,6 +149,13 @@
         </div>
     </section>
 
+    <section id="index" class="page-section">
+        <div class="content">
+            <h1>Index</h1>
+            <p>Index, all the work content goes here...</p>
+        </div>
+    </section>
+
     <hr>
 
     <footer>
@@ -176,22 +168,25 @@
             <div class="page-links">
                 <ul>
                     <li>
-                        <a href="#home"><p>Home</p></a>
+                        <button onclick="showSection('home')"><p>Home</p></button>
                     </li>
                     <li>
-                        <a href="#web-design"><p>Web Design</p></a>
+                        <button onclick="showSection('web-design')"><p>Web Design</p></button>
                     </li>
                     <li>
-                        <a href="#photography"><p>Photography</p></a>
+                        <button onclick="showSection('photography')"><p>Photography</p></button>
                     </li>
                     <li>
-                        <a href="#university"><p>University Projects</p></a>
+                        <button onclick="showSection('university')"><p>University Projects</p></button>
                     </li>
                     <li>
-                        <a href="#personal"><p>Personal Projects</p></a>
+                        <button onclick="showSection('personal')"><p>Personal Projects</p></button>
                     </li>
                     <li>
-                        <a href="#client"><p>Client Work</p></a>
+                        <button onclick="showSection('client')"><p>Client Work</p></button>
+                    </li>
+                    <li>
+                        <button onclick="showSection('index')"><p>Index</p></button>
                     </li>
                 </ul>
             </div>

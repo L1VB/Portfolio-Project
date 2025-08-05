@@ -22,7 +22,6 @@ body{
     background-color: var(--white-c);
     color: var(--dark-grey-c);
     font-family: var(--font);
-    margin: 0 2%;
 }
 
 /* Button Styles - Required for functionality */
@@ -36,28 +35,21 @@ button {
     text-align: inherit;
 }
 
-/* Page Section Visibility - CSS-only navigation using :target */
+/* Page Section Visibility - Core showSection() functionality */
 .page-section {
     display: none;
 }
 
-.page-section:target {
+.page-section.active {
     display: block;
 }
 
-/* Show home by default when no hash in URL */
-.page-section#home {
+#home-content {
     display: block;
 }
 
-/* Hide home when any other section is targeted */
-body:has(.page-section:not(#home):target) #home {
-    display: none !important;
-}
-
-/* Fallback for browsers that don't support :has() */
-.page-section:not(#home):target ~ #home {
-    display: none !important;
+#home-content.hidden {
+    display: none;
 }
 
 /* Text styles */
@@ -104,4 +96,19 @@ p{
     margin: 0;
     line-height: 1;
     font-size: 1;
+}
+
+/* nav styles */
+nav{
+    align-items: center;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav .home-li{
+    margin-right: auto;
+}
+nav li{
+    padding: .5em;
 }
