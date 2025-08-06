@@ -24,6 +24,11 @@ body{
     font-family: var(--font);
 }
 
+img{
+    width: 90%;
+    height: auto;
+}
+
 /* Button Styles - Required for functionality */
 button {
     background: none;
@@ -220,5 +225,7 @@ footer .page-links .desktop-footer{
 
     footer .page-links .drop-down{
         display: none;
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
     }
 }
