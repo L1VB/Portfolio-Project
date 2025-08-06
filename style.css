@@ -67,40 +67,40 @@ h1{
 }
 
 h2{
+    font-size: 2.5rem;
     font-weight: 450;
     text-transform: capitalize;
     margin: 0;
     padding: 0;
     line-height: 1;
-    font-size: 2.5;
 }
 
 h3{
+    font-size: 2rem;
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: 2;
 }
 
 h4{
+    font-size: 1.5rem;
     font-weight: 600;
     margin: 0;
     line-height: 1;
-    font-size: 1.5;
 }
 
 h5{
+    font-size: 1rem;
     font-weight: 500;
     margin: 0;
     line-height: 1;
-    font-size: 1;
 }
 
 p{
+    font-size: 1rem;
     font-weight: 400;
     margin: 0;
     line-height: 1;
-    font-size: 1;
 }
 
 /* nav styles */
@@ -116,6 +116,37 @@ nav .home-li{
 }
 nav li{
     padding: .5em;
+}
+
+/* desktop nav */
+.desktop-nav{
+    display: none;
+    opacity: 0;
+    align-items: center;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav .home-li{
+    margin-right: auto;
+}
+nav li{
+    padding: .5em;
+}
+
+@media screen and (min-width: 500px){
+    .desktop-nav{
+        display: block;
+        opacity: 1;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    nav{
+        display: none;
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+    }
 }
 
 /* footer styles */
