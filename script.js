@@ -20,8 +20,30 @@ function showSection(sectionName) {
         }
     }
     
-    // Scroll to top of page
+    // Reset scroll position to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Reset all dropdowns to closed state
+    resetDropdowns();
+}
+
+// Function to reset all dropdowns to their default closed state
+function resetDropdowns() {
+    // Get all dropdown target elements
+    const dropdownElements = document.querySelectorAll('.pr-open, .cl-open');
+    
+    dropdownElements.forEach(element => {
+        // Hide the dropdown
+        element.style.display = 'none';
+        // Remove opened class
+        element.classList.remove('dropdown-opened');
+    });
+    
+    // Reset all arrow images to normal position
+    const arrowImages = document.querySelectorAll('.pr-drop-down img, .cl-drop-down img');
+    arrowImages.forEach(arrow => {
+        arrow.style.transform = 'rotate(0deg)';
+    });
 }
 
 // Dropdown functionality with arrow rotation
