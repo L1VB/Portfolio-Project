@@ -24,7 +24,58 @@ function showSection(sectionName) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Initialize page - show home by default
+// Dropdown functionality with arrow rotation
+function initializeDropdowns() {
+    // Get all dropdown content elements
+    const dropdownContents = document.querySelectorAll('.pr-drop-down .content, .cl-drop-down .content');
+    
+    // Add click event listeners to each dropdown content
+    dropdownContents.forEach(content => {
+        content.addEventListener('click', function() {
+            // Determine which dropdown was clicked
+            const isProjectDropdown = this.closest('.pr-drop-down');
+            const isClientDropdown = this.closest('.cl-drop-down');
+            
+            let targetElement;
+            
+            if (isProjectDropdown) {
+                targetElement = document.querySelector('.pr-open');
+            } else if (isClientDropdown) {
+                targetElement = document.querySelector('.cl-open');
+            }
+            
+            if (targetElement) {
+                // Get the arrow image in the clicked dropdown
+                const arrowImg = this.querySelector('img');
+                
+                // Toggle the display
+                if (targetElement.style.display === 'none' || targetElement.style.display === '') {
+                    targetElement.style.display = 'block';
+                    // Add opened class for styling
+                    targetElement.classList.add('dropdown-opened');
+                    // Flip arrow upside down
+                    if (arrowImg) {
+                        arrowImg.style.transform = 'rotate(180deg)';
+                    }
+                } else {
+                    targetElement.style.display = 'none';
+                    // Remove opened class
+                    targetElement.classList.remove('dropdown-opened');
+                    // Reset arrow to normal position
+                    if (arrowImg) {
+                        arrowImg.style.transform = 'rotate(0deg)';
+                    }
+                }
+            }
+        });
+        
+        // Add cursor pointer to indicate clickable
+        content.style.cursor = 'pointer';
+    });
+}
+
+// Initialize both functionalities when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     showSection('home');
+    initializeDropdowns();
 });

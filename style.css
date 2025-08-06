@@ -121,54 +121,12 @@ footer{
     width: 100%;
     height: 100%;
 }
-footer .content{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
 
 footer .page-links ul{
     list-style: none;
     color: var(--grey-c);
 }
 
-footer .page-links{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.page-links .drop-down{
-    display: flex;
-    flex-direction: column;
-}
-
-.pr-drop-down{
-    border-top: 1px solid var(--medium-grey-c);
-}
-.pr-drop-down, 
-.cl-drop-down{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-bottom: 1px solid var(--medium-grey-c);
-    padding: 2em 0;
-    justify-content: space-between;
-}
-
-.drop-down img{
-    width: auto;
-    height: 7px;
-
-
-
-}
-
-
-.page-links .personal-projects{
-    display: flex;
-    flex-direction: column;
-}
 .social-media{
     display: flex;
     align-items: start;
@@ -178,4 +136,89 @@ footer img{
     height: 30px;
     width: auto;
     filter: saturate(0);
+}
+
+/* footer - contact & media */
+footer .content .contact-me{
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+}
+footer .content .social-media{
+    display: flex;
+    flex-direction: row;
+    gap: .65em;
+    padding-bottom: 2em !important;
+    height: fit-content;
+}
+footer .content .contact-me,
+footer .content .social-media{
+    padding: .5em 0;
+}
+
+/* mobile footer version */
+.page-links .drop-down{
+    display: flex;
+    flex-direction: column;
+}
+
+.pr-drop-down{
+    border-top: 1px solid var(--medium-grey-c);
+    border-bottom: 1px solid var(--medium-grey-c);
+    padding: 2em 0;
+}
+.cl-drop-down{
+    border-bottom: 1px solid var(--medium-grey-c);
+    padding: 2em 0;
+}
+
+.pr-drop-down .content, 
+.cl-drop-down .content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .25em 0;
+}
+
+.drop-down img{
+    width: auto;
+    height: 7px;
+}
+
+/* Dropdown transition styles */
+.pr-open,
+.cl-open {
+    display: none;
+    opacity: 0;
+    max-height: fit-content;
+    overflow: hidden;
+    transition: opacity 500ms ease-in-out, max-height 500ms ease-in-out;
+}
+
+.pr-open.dropdown-opened,
+.cl-open.dropdown-opened {
+    opacity: 1;
+    max-height: fit-content;
+}
+
+
+
+/* desktop footer version */
+footer .page-links .desktop-footer{
+    display: none;
+    opacity: 0;
+    
+}
+
+@media screen and (min-width: 500px){
+    footer .page-links .desktop-footer{
+        display: block;
+        opacity: 1;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    footer .page-links .drop-down{
+        display: none;
+    }
 }
