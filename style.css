@@ -276,6 +276,17 @@ footer .page-links .desktop-footer{
 }
 
 /* menu-pop up */
+nav li button img{
+    width: auto;
+    height: 25px;
+    filter: saturate(0);
+    float: right;
+    align-items: center;
+}
+nav li button img{
+    filter: saturate(0);
+}
+
 .menu-pop-up {
     display: none;
 }

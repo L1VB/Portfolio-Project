@@ -5,6 +5,7 @@ function showSection(sectionName) {
     const mobileHomeLi = document.querySelector('nav .home-li');
     const footer = document.querySelector('footer');
     const sections = document.querySelectorAll('.page-section');
+    const navButtonImg = document.querySelector('nav li button img'); // Get the nav button image
     
     // Special handling for menu toggle
     if (sectionName === 'menu') {
@@ -20,6 +21,10 @@ function showSection(sectionName) {
             // Show footer again
             if (footer) {
                 footer.style.display = 'block';
+            }
+            // Reset image saturation to 0
+            if (navButtonImg) {
+                navButtonImg.style.filter = 'saturate(0)';
             }
         } else {
             // Menu is not active, so show it
@@ -38,6 +43,10 @@ function showSection(sectionName) {
             if (footer) {
                 footer.style.display = 'none';
             }
+            // Set image saturation to 1 when menu is active
+            if (navButtonImg) {
+                navButtonImg.style.filter = 'saturate(1)';
+            }
         }
     } else {
         // Normal section handling for non-menu sections
@@ -45,6 +54,10 @@ function showSection(sectionName) {
         // ALWAYS close the menu first if it's open
         if (menuSection.classList.contains('active')) {
             menuSection.classList.remove('active');
+            // Reset image saturation when menu is closed
+            if (navButtonImg) {
+                navButtonImg.style.filter = 'saturate(0)';
+            }
         }
         
         // Hide all page sections
