@@ -1,11 +1,13 @@
 function showSection(sectionName) {
+    // Get references to key elements
+    const menuSection = document.getElementById('menu');
+    const homeContent = document.getElementById('home-content');
+    const mobileHomeLi = document.querySelector('nav .home-li');
+    const footer = document.querySelector('footer');
+    const sections = document.querySelectorAll('.page-section');
+    
     // Special handling for menu toggle
     if (sectionName === 'menu') {
-        const menuSection = document.getElementById('menu');
-        const homeContent = document.getElementById('home-content');
-        const mobileHomeLi = document.querySelector('nav .home-li'); // Mobile nav home button
-        const footer = document.querySelector('footer'); // Footer element
-        
         // Check if menu is currently active
         if (menuSection.classList.contains('active')) {
             // Menu is active, so go back to home
@@ -22,7 +24,6 @@ function showSection(sectionName) {
         } else {
             // Menu is not active, so show it
             // Hide all other page sections first
-            const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
@@ -40,16 +41,16 @@ function showSection(sectionName) {
         }
     } else {
         // Normal section handling for non-menu sections
+        
+        // ALWAYS close the menu first if it's open
+        if (menuSection.classList.contains('active')) {
+            menuSection.classList.remove('active');
+        }
+        
         // Hide all page sections
-        const sections = document.querySelectorAll('.page-section');
         sections.forEach(section => {
             section.classList.remove('active');
         });
-        
-        // Hide or show home content
-        const homeContent = document.getElementById('home-content');
-        const mobileHomeLi = document.querySelector('nav .home-li'); // Mobile nav home button
-        const footer = document.querySelector('footer'); // Footer element
         
         if (sectionName === 'home') {
             // Show home content
