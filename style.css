@@ -25,7 +25,7 @@ body{
 }
 
 img{
-    width: 90%;
+    width: 100%;
     height: auto;
 }
 
@@ -47,10 +47,14 @@ button {
 
 .page-section.active {
     display: block;
+    padding: .5em;
+    padding-top: 3em;
 }
 
 #home-content {
     display: block;
+    padding: .5em;
+    padding-top: 3em;
 }
 
 #home-content.hidden {
@@ -105,17 +109,27 @@ p{
 
 /* nav styles */
 nav{
-    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: fit-content;
+    padding: .5em;
+    margin: 0;
+    background: linear-gradient(#faf7f0, rgba(250, 247, 240, 0));
 }
 nav ul{
-    list-style: none;
     display: flex;
+    list-style: none;
+    align-items: center;
 }
-nav .home-li{
-    margin-right: auto;
+nav .menu-bar{
+    margin-left: auto;
 }
-nav li{
-    padding: .5em;
+nav li button img{
+    width: auto;
+    height: 25px;
+    filter: saturate(0);
+    float: right;
+    align-items: center;
 }
 
 /* desktop nav */
@@ -124,14 +138,14 @@ nav li{
     opacity: 0;
     align-items: center;
 }
-nav ul{
+.desktop-nav ul{
     list-style: none;
     display: flex;
 }
-nav .home-li{
+.desktop-nav .home-li{
     margin-right: auto;
 }
-nav li{
+.desktop-nav li{
     padding: .5em;
 }
 
@@ -259,4 +273,30 @@ footer .page-links .desktop-footer{
         opacity: 0;
         transition: opacity 500ms ease-in-out;
     }
+}
+
+/* menu-pop up */
+.menu-pop-up {
+    display: none;
+}
+
+.menu-pop-up.active {
+    display: block;
+    padding: .5em;
+    padding-top: 3em;
+    height: 100vh;
+    z-index: -10;
+}
+
+.menu-pop-up.active .content .buttons ul{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 35vh;
+    list-style: none;
+    overflow: hidden;
+}
+
+.buttons ul li:last-of-type{
+    margin-top: auto;
 }

@@ -1,22 +1,82 @@
 function showSection(sectionName) {
-    // Hide all page sections
-    const sections = document.querySelectorAll('.page-section');
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-    
-    // Hide or show home content
-    const homeContent = document.getElementById('home-content');
-    
-    if (sectionName === 'home') {
-        // Show home content
-        homeContent.classList.remove('hidden');
+    // Special handling for menu toggle
+    if (sectionName === 'menu') {
+        const menuSection = document.getElementById('menu');
+        const homeContent = document.getElementById('home-content');
+        const mobileHomeLi = document.querySelector('nav .home-li'); // Mobile nav home button
+        const footer = document.querySelector('footer'); // Footer element
+        
+        // Check if menu is currently active
+        if (menuSection.classList.contains('active')) {
+            // Menu is active, so go back to home
+            menuSection.classList.remove('active');
+            homeContent.classList.remove('hidden');
+            // Show mobile home button again
+            if (mobileHomeLi) {
+                mobileHomeLi.style.display = 'block';
+            }
+            // Show footer again
+            if (footer) {
+                footer.style.display = 'block';
+            }
+        } else {
+            // Menu is not active, so show it
+            // Hide all other page sections first
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            // Hide home content and show menu
+            homeContent.classList.add('hidden');
+            menuSection.classList.add('active');
+            // Hide mobile home button when menu is active
+            if (mobileHomeLi) {
+                mobileHomeLi.style.display = 'none';
+            }
+            // Hide footer when menu is active
+            if (footer) {
+                footer.style.display = 'none';
+            }
+        }
     } else {
-        // Hide home content and show selected section
-        homeContent.classList.add('hidden');
-        const targetSection = document.getElementById(sectionName);
-        if (targetSection) {
-            targetSection.classList.add('active');
+        // Normal section handling for non-menu sections
+        // Hide all page sections
+        const sections = document.querySelectorAll('.page-section');
+        sections.forEach(section => {
+            section.classList.remove('active');
+        });
+        
+        // Hide or show home content
+        const homeContent = document.getElementById('home-content');
+        const mobileHomeLi = document.querySelector('nav .home-li'); // Mobile nav home button
+        const footer = document.querySelector('footer'); // Footer element
+        
+        if (sectionName === 'home') {
+            // Show home content
+            homeContent.classList.remove('hidden');
+            // Make sure mobile home button is visible
+            if (mobileHomeLi) {
+                mobileHomeLi.style.display = 'block';
+            }
+            // Make sure footer is visible
+            if (footer) {
+                footer.style.display = 'block';
+            }
+        } else {
+            // Hide home content and show selected section
+            homeContent.classList.add('hidden');
+            const targetSection = document.getElementById(sectionName);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+            // Make sure mobile home button is visible for other sections
+            if (mobileHomeLi) {
+                mobileHomeLi.style.display = 'block';
+            }
+            // Make sure footer is visible for other sections
+            if (footer) {
+                footer.style.display = 'block';
+            }
         }
     }
     

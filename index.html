@@ -12,16 +12,12 @@
         <div class="content">
             <ul>
                 <li class="home-li">
-                    <button onclick="showSection('home')"><h4>Home</h4></button>
+                    <button onclick="showSection('home')"><h5>Home</h5></button>
                 </li>
-                <li>
-                    <button onclick="showSection('web-design')"><h4>Web Design</h4></button>
-                </li>
-                <li>
-                    <button onclick="showSection('client')"><h4>Client Work</h4></button>
-                </li>
-                <li>
-                    <button onclick="showSection('index')"><h4>Index</h4></button>
+                <li class="menu-bar">
+                    <button onclick="showSection('menu')">
+                        <img src="https://cdn-icons-png.flaticon.com/512/8106/8106985.png" alt="">
+                    </button>
                 </li>
             </ul>
         </div>
@@ -46,8 +42,6 @@
             </ul>
         </div>
     </nav>
-
-    <hr>
 
     <!-- Home Page Content -->
     <div id="home-content">
@@ -133,11 +127,35 @@
     </div>
 
     <!-- Section Pages -->
+    <section id="menu" class="menu-pop-up">
+        <div class="content">
+            <div class="buttons">
+                <ul>
+                    <li>
+                        <button onclick="showSection('web-design')"><h3>Web Design</h3></button>
+                    </li>
+                    <li>
+                        <button onclick="showSection('photography')"><h3>Photography</h3></button>
+                    </li>
+                    <li>
+                        <button onclick="showSection('university')"><h3>University Projects</h3></button>
+                    </li>
+                    <li>
+                        <button onclick="showSection('client')"><h3>Albany Yoga Room</h3></button>
+                    </li>
+                    <li>
+                        <button onclick="showSection('index')"><h3>Index</h3></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
     <section id="web-design" class="page-section">
         <div class="content">
             <h1>Web Design</h1>
             <p>Web design content goes here...</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus est animi quas voluptates, eligendi quo deleniti officia non? Quibusdam voluptatum facere delectus asperiores illo ipsum, fuga dolorum atque aliquam nisi?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas voluptatum nesciunt vero atque ipsum qui ut iste molestiae ea nulla ipsa tenetur provident necessitatibus omnis ratione facere, adipisci saepe maiores!</p>
         </div>
     </section>
 
@@ -176,14 +194,12 @@
         </div>
     </section>
 
-    <hr>
-
     <footer>
         <div class="content">
             <section>
                 <div class="contact-me">
-                    <h2>Contact Me!</h2>
-                    <h3>(+64) 027 397 1907</h3>
+                    <h3>Contact Me!</h3>
+                    <h4>(+64) 027 397 1907</h4>
                 </div>
     
                 <div class="social-media">
