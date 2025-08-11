@@ -136,9 +136,6 @@ nav li button img{
     padding: .5em;
 }
 
-
-
-
 /* desktop nav */
 .desktop-nav{
     display: none;
@@ -263,8 +260,6 @@ footer .content .social-media{
     opacity: 1;
     height: 100%;
 }
-
-
 
 /* desktop footer version */
 footer .page-links .desktop-footer{

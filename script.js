@@ -1,3 +1,6 @@
+// Variable to track the last active page
+let lastActivePage = 'home';
+
 function showSection(sectionName) {
     // Get references to key elements
     const menuSection = document.getElementById('menu');
@@ -11,9 +14,9 @@ function showSection(sectionName) {
     if (sectionName === 'menu') {
         // Check if menu is currently active
         if (menuSection.classList.contains('active')) {
-            // Menu is active, so go back to home
+            // Menu is active, so go back to the last active page
             menuSection.classList.remove('active');
-            homeContent.classList.remove('hidden');
+            
             // Show mobile home button again
             if (mobileHomeLi) {
                 mobileHomeLi.style.display = 'block';
@@ -25,6 +28,26 @@ function showSection(sectionName) {
             // Reset image saturation to 0
             if (navButtonImg) {
                 navButtonImg.style.filter = 'saturate(0)';
+            }
+            
+            // Return to the last active page
+            if (lastActivePage === 'home') {
+                homeContent.classList.remove('hidden');
+                // Make sure all other sections are hidden
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+            } else {
+                homeContent.classList.add('hidden');
+                // Hide all page sections first
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                // Show the last active section
+                const targetSection = document.getElementById(lastActivePage);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
             }
         } else {
             // Menu is not active, so show it
@@ -50,6 +73,9 @@ function showSection(sectionName) {
         }
     } else {
         // Normal section handling for non-menu sections
+        
+        // Update the last active page before changing sections
+        lastActivePage = sectionName;
         
         // ALWAYS close the menu first if it's open
         if (menuSection.classList.contains('active')) {
