@@ -283,43 +283,43 @@ footer .page-links .desktop-footer{
     }
 }
 
-/* INDEX content */
-#index .search{
+/* record content */
+#record .search{
     display: flex;
     gap: 1em;
 }
-#index .content {
+#record .content {
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
-#index .content .intro{
+#record .content .intro{
     display: flex;
     flex-direction: column;
     gap: .25em;
 }
-#index .number{
+#record .number{
     display: flex;
     justify-content: space-between;
 }
 
-#index .projects{
+#record .projects{
     width: 100%;
     height: 100%;
 }
-#index .projects .work{
+#record .projects .work{
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: .5em 0 2em;
 }
-#index .projects .work .content{
+#record .projects .work .content{
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 1em;
 }
-#index .projects .work .content .des{
+#record .projects .work .content .des{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -327,7 +327,7 @@ footer .page-links .desktop-footer{
 }
 
 
-#index .projects .content img{
+#record .projects .content img{
     width: 8em;
     height: auto;
 }
