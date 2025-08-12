@@ -198,6 +198,7 @@ footer .content .contact-me{
     display: flex;
     flex-direction: column;
     gap: .25em;
+    text-decoration: none;
 }
 footer .content .social-media{
     display: flex;
@@ -282,23 +283,43 @@ footer .page-links .desktop-footer{
     }
 }
 
-/* web design content */
-#web-design .projects{
+/* INDEX content */
+#index .search{
+    display: flex;
+    gap: 1em;
+}
+#index .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+#index .content .intro{
+    display: flex;
+    flex-direction: column;
+    gap: .25em;
+}
+#index .number{
+    display: flex;
+    justify-content: space-between;
+}
+
+#index .projects{
     width: 100%;
     height: 100%;
 }
-#web-design .projects .work{
+#index .projects .work{
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: .5em 0 2em;
 }
-#web-design .projects .work .content{
+#index .projects .work .content{
     display: flex;
+    flex-direction: row;
     width: 100%;
     gap: 1em;
 }
-#web-design .projects .work .content .des{
+#index .projects .work .content .des{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -306,7 +327,7 @@ footer .page-links .desktop-footer{
 }
 
 
-#web-design .projects .content img{
+#index .projects .content img{
     width: 8em;
     height: auto;
 }
@@ -316,4 +337,17 @@ footer .page-links .desktop-footer{
     transform: scaleX(-1);
     padding: 0 !important;
     margin: -.5em 0 0 !important;
+}
+
+/* Home Page */
+#home-content .contact .content{
+    padding: .5em 0;
+}
+#home-content .contact .content .banner{
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    color: var(--orange-c);
 }
